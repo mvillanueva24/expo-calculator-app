@@ -6,12 +6,14 @@ import { StatusBar } from "expo-status-bar";
 
 import { globalStyles } from "@/styles/global-styles";
 
-import * as NavigationBar from "expo-navigation-bar";
+import * as SystemUI from "expo-system-ui";
+const isAndroid = Platform.OS === "android";
 
-const inAndroid = Platform.OS === "android";
-
-if (inAndroid) {
-  NavigationBar.setBackgroundColorAsync("#000000");
+if (isAndroid) {
+  const isAndroid = Platform.OS === "android";
+  if (isAndroid) {
+    SystemUI.setBackgroundColorAsync("transparent");
+  }
 }
 
 const RootLayout = () => {
